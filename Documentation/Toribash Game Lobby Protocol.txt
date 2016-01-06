@@ -1,0 +1,52 @@
+NEWGAME 1;350 10,20,20,30,30,35,35,40,40,40,50 20 0 0 11 90 77 0 aikido.tbm 0 450 325 200 50 0 1 0 2 51 0 52 99 0 4 0.000000 0.000000 -30.000000 98 0 1 88 8
+NEWGAME 1;350 10,20,20,30,30,35,35,40,40,40,50 20 0 0 11 90 77 0 aikido.tbm 0 450 325 200 50 0 1 0 2 51 0 52 99 0 4 0.000000 0.000000 -30.000000 98 0 1 88 8
+
+Matchframes
+TurnFrames (comma seperated)
+ReactionTime
+?
+?
+Flags 
+	- Flag 1  DQ = yes,	DM = no, 	Frac = no, 	Grip = yes
+	- Flag 2  DQ = no, 	DM = yes, 	Frac = no, 	Grip = yes
+	- Flag 3  DQ = yes,	DM = yes, 	Frac = no, 	Grip = yes
+	- Flag 4  DQ = no, 	DM = no, 	Frac = no, 	Grip = no
+	- Flag 5  DQ = yes,	DM = no, 	Frac = no, 	Grip = no
+	- Flag 6  DQ = no, 	DM = yes, 	Frac = no, 	Grip = no
+	- Flag 7  DQ = yes,	DM = yes, 	Frac = no, 	Grip = no
+	- Flag 8  DQ = no, 	DM = no, 	Frac = yes, Grip = yes
+	- Flag 9  DQ = yes,	DM = no, 	Frac = yes, Grip = yes
+	- Flag 10 DQ = no, 	DM = yes, 	Frac = yes, Grip = yes
+	- Flag 11 DQ = yes,	DM = yes, 	Frac = yes, Grip = yes
+	- Flag 12 DQ = no, 	DM = no, 	Frac = yes, Grip = no
+	- Flag 13 DQ = yes,	DM = no, 	Frac = yes, Grip = no
+	- Flag 14 DQ = no, 	DM = yes, 	Frac = yes, Grip = no
+	- Flag 15 DQ = yes,	DM = yes, 	Frac = yes, Grip = no
+	- Flag 16 DQ = no, 	DM = no, 	Frac = no, 	Grip = yes
+EngageDistance
+Damage
+Sumo
+Mod
+? 
+DojoSize
+DismemberThreshold
+FractureThreshold
+EngageHeight
+?
+?
+?
+?
+EngageRotation
+?
+EngageSpace
+DQTimeOut
+?
+DojoType
+GravityX
+GravityZ
+GravityY
+DQFlag
+?
+DrawWinner
+PointThreshold
+MaxContacts
