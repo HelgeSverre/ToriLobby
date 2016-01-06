@@ -141,8 +141,8 @@
             // toolStripTotalLobbies
             // 
             this.toolStripTotalLobbies.Name = "toolStripTotalLobbies";
-            this.toolStripTotalLobbies.Size = new System.Drawing.Size(76, 20);
-            this.toolStripTotalLobbies.Text = "Lobbies: 0";
+            this.toolStripTotalLobbies.Size = new System.Drawing.Size(70, 20);
+            this.toolStripTotalLobbies.Text = "Rooms: 0";
             // 
             // toolStripTotalPlayers
             // 

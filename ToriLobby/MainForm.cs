@@ -56,7 +56,7 @@ namespace ToriLobby
 
             // TODO: See if there is a better way to inject this counter thingy into the string without having to remember the "Players: " part
             toolStripTotalPlayers.Text = "Players: " + totalPlayers.ToString();
-            toolStripTotalLobbies.Text = "Lobbies: " + tmpRooms.Count.ToString();
+            toolStripTotalLobbies.Text = "Rooms: " + tmpRooms.Count.ToString();
         }
 
         private void gameRoomList_CellClick(object sender, DataGridViewCellEventArgs e)
