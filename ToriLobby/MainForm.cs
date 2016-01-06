@@ -41,21 +41,24 @@ namespace ToriLobby
 
             foreach (Room room in tmpRooms)
             {
+                // Create a new row
                 DataGridViewRow row = new DataGridViewRow();
 
+                // Add cells to the row
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = room.Name });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = room.Description });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = room.GameRules.Mod });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = room.IPAddress });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = room.Port });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = room.Players.Count });
+
+                // Add the row to the list
                 gameRoomList.Rows.Add(row);
-
             }
-
 
             int totalPlayers = lobby.getTotalPlayers();
 
+            // TODO: See if there is a better way to inject this counter thingy into the string without having to remember the "Players: " part
             toolStripTotalPlayers.Text = "Players: " + totalPlayers.ToString();
             toolStripTotalLobbies.Text = "Lobbies: " + tmpRooms.Count.ToString();
         }

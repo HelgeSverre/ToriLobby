@@ -75,7 +75,7 @@
             this.gameRoomList.RowHeadersVisible = false;
             this.gameRoomList.RowTemplate.Height = 28;
             this.gameRoomList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gameRoomList.Size = new System.Drawing.Size(1043, 488);
+            this.gameRoomList.Size = new System.Drawing.Size(1010, 488);
             this.gameRoomList.TabIndex = 0;
             this.gameRoomList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gameRoomList_CellClick);
             // 
@@ -84,10 +84,10 @@
             this.PlayerList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PlayerList.FormattingEnabled = true;
             this.PlayerList.ItemHeight = 16;
-            this.PlayerList.Location = new System.Drawing.Point(1052, 2);
+            this.PlayerList.Location = new System.Drawing.Point(1019, 2);
             this.PlayerList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PlayerList.Name = "PlayerList";
-            this.PlayerList.Size = new System.Drawing.Size(178, 488);
+            this.PlayerList.Size = new System.Drawing.Size(211, 488);
             this.PlayerList.TabIndex = 1;
             // 
             // LobbyStatusStrip
@@ -181,7 +181,7 @@
             // 
             this.tableLayoutServerBrowser.ColumnCount = 2;
             this.tableLayoutServerBrowser.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutServerBrowser.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
+            this.tableLayoutServerBrowser.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 217F));
             this.tableLayoutServerBrowser.Controls.Add(this.gameRoomList, 0, 0);
             this.tableLayoutServerBrowser.Controls.Add(this.PlayerList, 1, 0);
             this.tableLayoutServerBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
