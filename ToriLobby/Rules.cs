@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ToriLobby
 {
@@ -57,8 +53,6 @@ namespace ToriLobby
         2  | Your opponent achieves points when you touch yourself.
         */
         public int DQFlag { get; set; }
-
-
         public bool DrawWinner { get; set; }
         public int PointThreshold { get; set; }
         public int MaxContacts { get; set; }

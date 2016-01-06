@@ -43,9 +43,11 @@
             this.IPAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Port = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlayerCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutServerBrowser = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.gameRoomList)).BeginInit();
             this.LobbyStatusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.tableLayoutServerBrowser.SuspendLayout();
             this.SuspendLayout();
             // 
             // gameRoomList
@@ -64,7 +66,8 @@
             this.IPAddress,
             this.Port,
             this.PlayerCount});
-            this.gameRoomList.Location = new System.Drawing.Point(11, 29);
+            this.gameRoomList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gameRoomList.Location = new System.Drawing.Point(3, 2);
             this.gameRoomList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gameRoomList.MultiSelect = false;
             this.gameRoomList.Name = "gameRoomList";
@@ -72,18 +75,19 @@
             this.gameRoomList.RowHeadersVisible = false;
             this.gameRoomList.RowTemplate.Height = 28;
             this.gameRoomList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gameRoomList.Size = new System.Drawing.Size(741, 371);
+            this.gameRoomList.Size = new System.Drawing.Size(1043, 488);
             this.gameRoomList.TabIndex = 0;
             this.gameRoomList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gameRoomList_CellClick);
             // 
             // PlayerList
             // 
+            this.PlayerList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PlayerList.FormattingEnabled = true;
             this.PlayerList.ItemHeight = 16;
-            this.PlayerList.Location = new System.Drawing.Point(758, 28);
+            this.PlayerList.Location = new System.Drawing.Point(1052, 2);
             this.PlayerList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PlayerList.Name = "PlayerList";
-            this.PlayerList.Size = new System.Drawing.Size(192, 372);
+            this.PlayerList.Size = new System.Drawing.Size(178, 488);
             this.PlayerList.TabIndex = 1;
             // 
             // LobbyStatusStrip
@@ -92,9 +96,9 @@
             this.LobbyStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTotalLobbies,
             this.toolStripTotalPlayers});
-            this.LobbyStatusStrip.Location = new System.Drawing.Point(0, 409);
+            this.LobbyStatusStrip.Location = new System.Drawing.Point(0, 520);
             this.LobbyStatusStrip.Name = "LobbyStatusStrip";
-            this.LobbyStatusStrip.Size = new System.Drawing.Size(962, 25);
+            this.LobbyStatusStrip.Size = new System.Drawing.Size(1233, 25);
             this.LobbyStatusStrip.TabIndex = 4;
             this.LobbyStatusStrip.Text = "Lobby Status";
             // 
@@ -133,7 +137,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(962, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1233, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -173,15 +177,29 @@
             this.PlayerCount.Name = "PlayerCount";
             this.PlayerCount.ReadOnly = true;
             // 
+            // tableLayoutServerBrowser
+            // 
+            this.tableLayoutServerBrowser.ColumnCount = 2;
+            this.tableLayoutServerBrowser.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutServerBrowser.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
+            this.tableLayoutServerBrowser.Controls.Add(this.gameRoomList, 0, 0);
+            this.tableLayoutServerBrowser.Controls.Add(this.PlayerList, 1, 0);
+            this.tableLayoutServerBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutServerBrowser.Location = new System.Drawing.Point(0, 28);
+            this.tableLayoutServerBrowser.Name = "tableLayoutServerBrowser";
+            this.tableLayoutServerBrowser.RowCount = 1;
+            this.tableLayoutServerBrowser.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutServerBrowser.Size = new System.Drawing.Size(1233, 492);
+            this.tableLayoutServerBrowser.TabIndex = 5;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(962, 434);
+            this.ClientSize = new System.Drawing.Size(1233, 545);
+            this.Controls.Add(this.tableLayoutServerBrowser);
             this.Controls.Add(this.LobbyStatusStrip);
-            this.Controls.Add(this.PlayerList);
-            this.Controls.Add(this.gameRoomList);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -193,6 +211,7 @@
             this.LobbyStatusStrip.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tableLayoutServerBrowser.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,6 +233,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IPAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn Port;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlayerCount;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutServerBrowser;
     }
 }
 

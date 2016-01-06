@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Net.Sockets;
-using System.IO;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Net;
+
 
 namespace ToriLobby
 {
     public partial class MainForm : Form
     {
 
-        
+        // TODO: Move this into a config file or grab it from somewhere on launch
         string lobbyHost = "144.76.163.135";
         int lobbyPort = 22000;
 
@@ -50,8 +47,8 @@ namespace ToriLobby
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = room.Description });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = room.GameRules.Mod });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = room.IPAddress });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = room.Port.ToString() });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = room.Players.Count.ToString() });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = room.Port });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = room.Players.Count });
                 gameRoomList.Rows.Add(row);
 
             }
@@ -66,7 +63,7 @@ namespace ToriLobby
         private void gameRoomList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // ColumnIndex RowIndex
-            if (e.RowIndex > 0)
+            if (e.RowIndex >= 0)
             {
                 int rowIndex = e.RowIndex;
                 DataGridViewRow row = gameRoomList.Rows[rowIndex];
