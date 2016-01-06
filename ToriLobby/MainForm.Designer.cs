@@ -30,23 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.gameRoomList = new System.Windows.Forms.DataGridView();
-            this.PlayerList = new System.Windows.Forms.ListBox();
-            this.LobbyStatusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripTotalPlayers = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripTotalLobbies = new System.Windows.Forms.ToolStripStatusLabel();
-            this.serversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.RoomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoomDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GameMod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IPAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Port = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlayerCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlayerList = new System.Windows.Forms.ListBox();
+            this.LobbyStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripTotalLobbies = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripTotalPlayers = new System.Windows.Forms.ToolStripStatusLabel();
+            this.serversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MainFormMenuStrip = new System.Windows.Forms.MenuStrip();
             this.tableLayoutServerBrowser = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.gameRoomList)).BeginInit();
             this.LobbyStatusStrip.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.MainFormMenuStrip.SuspendLayout();
             this.tableLayoutServerBrowser.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,68 +78,6 @@
             this.gameRoomList.Size = new System.Drawing.Size(1010, 488);
             this.gameRoomList.TabIndex = 0;
             this.gameRoomList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gameRoomList_CellClick);
-            // 
-            // PlayerList
-            // 
-            this.PlayerList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlayerList.FormattingEnabled = true;
-            this.PlayerList.ItemHeight = 16;
-            this.PlayerList.Location = new System.Drawing.Point(1019, 2);
-            this.PlayerList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PlayerList.Name = "PlayerList";
-            this.PlayerList.Size = new System.Drawing.Size(211, 488);
-            this.PlayerList.TabIndex = 1;
-            // 
-            // LobbyStatusStrip
-            // 
-            this.LobbyStatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.LobbyStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTotalLobbies,
-            this.toolStripTotalPlayers});
-            this.LobbyStatusStrip.Location = new System.Drawing.Point(0, 520);
-            this.LobbyStatusStrip.Name = "LobbyStatusStrip";
-            this.LobbyStatusStrip.Size = new System.Drawing.Size(1233, 25);
-            this.LobbyStatusStrip.TabIndex = 4;
-            this.LobbyStatusStrip.Text = "Lobby Status";
-            // 
-            // toolStripTotalPlayers
-            // 
-            this.toolStripTotalPlayers.Name = "toolStripTotalPlayers";
-            this.toolStripTotalPlayers.Size = new System.Drawing.Size(70, 20);
-            this.toolStripTotalPlayers.Text = "Players: 0";
-            // 
-            // toolStripTotalLobbies
-            // 
-            this.toolStripTotalLobbies.Name = "toolStripTotalLobbies";
-            this.toolStripTotalLobbies.Size = new System.Drawing.Size(76, 20);
-            this.toolStripTotalLobbies.Text = "Lobbies: 0";
-            // 
-            // serversToolStripMenuItem
-            // 
-            this.serversToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.refreshToolStripMenuItem});
-            this.serversToolStripMenuItem.Name = "serversToolStripMenuItem";
-            this.serversToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
-            this.serversToolStripMenuItem.Text = "Rooms";
-            // 
-            // refreshToolStripMenuItem
-            // 
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
-            this.refreshToolStripMenuItem.Text = "Refresh";
-            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.serversToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1233, 28);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // RoomName
             // 
@@ -177,6 +115,68 @@
             this.PlayerCount.Name = "PlayerCount";
             this.PlayerCount.ReadOnly = true;
             // 
+            // PlayerList
+            // 
+            this.PlayerList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PlayerList.FormattingEnabled = true;
+            this.PlayerList.ItemHeight = 16;
+            this.PlayerList.Location = new System.Drawing.Point(1019, 2);
+            this.PlayerList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PlayerList.Name = "PlayerList";
+            this.PlayerList.Size = new System.Drawing.Size(211, 488);
+            this.PlayerList.TabIndex = 1;
+            // 
+            // LobbyStatusStrip
+            // 
+            this.LobbyStatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.LobbyStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTotalLobbies,
+            this.toolStripTotalPlayers});
+            this.LobbyStatusStrip.Location = new System.Drawing.Point(0, 520);
+            this.LobbyStatusStrip.Name = "LobbyStatusStrip";
+            this.LobbyStatusStrip.Size = new System.Drawing.Size(1233, 25);
+            this.LobbyStatusStrip.TabIndex = 4;
+            this.LobbyStatusStrip.Text = "Lobby Status";
+            // 
+            // toolStripTotalLobbies
+            // 
+            this.toolStripTotalLobbies.Name = "toolStripTotalLobbies";
+            this.toolStripTotalLobbies.Size = new System.Drawing.Size(76, 20);
+            this.toolStripTotalLobbies.Text = "Lobbies: 0";
+            // 
+            // toolStripTotalPlayers
+            // 
+            this.toolStripTotalPlayers.Name = "toolStripTotalPlayers";
+            this.toolStripTotalPlayers.Size = new System.Drawing.Size(70, 20);
+            this.toolStripTotalPlayers.Text = "Players: 0";
+            // 
+            // serversToolStripMenuItem
+            // 
+            this.serversToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem});
+            this.serversToolStripMenuItem.Name = "serversToolStripMenuItem";
+            this.serversToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.serversToolStripMenuItem.Text = "Rooms";
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
+            // MainFormMenuStrip
+            // 
+            this.MainFormMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.MainFormMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.serversToolStripMenuItem});
+            this.MainFormMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MainFormMenuStrip.Name = "MainFormMenuStrip";
+            this.MainFormMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.MainFormMenuStrip.Size = new System.Drawing.Size(1233, 28);
+            this.MainFormMenuStrip.TabIndex = 3;
+            this.MainFormMenuStrip.Text = "menuStrip1";
+            // 
             // tableLayoutServerBrowser
             // 
             this.tableLayoutServerBrowser.ColumnCount = 2;
@@ -200,17 +200,17 @@
             this.ClientSize = new System.Drawing.Size(1233, 545);
             this.Controls.Add(this.tableLayoutServerBrowser);
             this.Controls.Add(this.LobbyStatusStrip);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.MainFormMenuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.MainFormMenuStrip;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "ToriLobby";
             ((System.ComponentModel.ISupportInitialize)(this.gameRoomList)).EndInit();
             this.LobbyStatusStrip.ResumeLayout(false);
             this.LobbyStatusStrip.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.MainFormMenuStrip.ResumeLayout(false);
+            this.MainFormMenuStrip.PerformLayout();
             this.tableLayoutServerBrowser.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -226,7 +226,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripTotalLobbies;
         private System.Windows.Forms.ToolStripMenuItem serversToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip MainFormMenuStrip;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomName;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn GameMod;

@@ -20,7 +20,6 @@ namespace ToriLobby
             InitializeComponent();
 
             lobby = new Lobby(lobbyHost, lobbyPort);
-
         }
 
 
@@ -30,9 +29,6 @@ namespace ToriLobby
             Render();
         }
 
-        
-        // TODO: Move this into its own class
-        
         private void Render()
         {
             gameRoomList.Rows.Clear();
@@ -65,13 +61,11 @@ namespace ToriLobby
 
         private void gameRoomList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // ColumnIndex RowIndex
             if (e.RowIndex >= 0)
             {
-                int rowIndex = e.RowIndex;
-                DataGridViewRow row = gameRoomList.Rows[rowIndex];
+                DataGridViewRow row = gameRoomList.Rows[e.RowIndex];
 
-
+                // FIXME: This is a poor way of getting this information, should be using a datasource or databinding instead.
                 Room SelectedGameRoom = lobby.GetRooms().Find(item => item.Name == (string)row.Cells[0].Value);
 
                 PlayerList.Items.Clear();
