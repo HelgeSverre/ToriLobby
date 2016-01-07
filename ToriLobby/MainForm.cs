@@ -76,6 +76,24 @@ namespace ToriLobby
                 }
             }
         }
+
+        private void PlayerList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            // Grab the selected player from the list
+            String PlayerName = (string) PlayerList.Items[PlayerList.SelectedIndex];
+
+            // If the selected playername is valid (which it probably is)
+            if (!String.IsNullOrEmpty(PlayerName)) {
+
+                var PlayerStats = Player.getStats(PlayerName);
+
+                PlayerStatsForm PlayerStatsForm = new PlayerStatsForm(PlayerStats);
+                PlayerStatsForm.Show();
+            }
+            
+            
+        }
     }
 
 }

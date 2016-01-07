@@ -125,6 +125,7 @@
             this.PlayerList.Name = "PlayerList";
             this.PlayerList.Size = new System.Drawing.Size(211, 488);
             this.PlayerList.TabIndex = 1;
+            this.PlayerList.SelectedIndexChanged += new System.EventHandler(this.PlayerList_SelectedIndexChanged);
             // 
             // LobbyStatusStrip
             // 
