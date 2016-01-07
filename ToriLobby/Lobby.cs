@@ -96,7 +96,7 @@ namespace ToriLobby
                 // Add the new gameroom with the parsed information
                 tmpRooms.Add(new Room(
                     LobbyInfo["SERVER"].Groups["name"].ToString(),
-                    LobbyInfo["DESC"].Groups["description"].ToString(),
+                    Regex.Replace(LobbyInfo["DESC"].Groups["description"].ToString(), "\\^\\d+", ""),
                     Players,
                     LobbyInfo["SERVER"].Groups["ip_address"].ToString(),
                     Int32.Parse(LobbyInfo["SERVER"].Groups["port"].ToString()),
