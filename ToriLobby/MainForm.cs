@@ -67,13 +67,7 @@ namespace ToriLobby
 
                 // FIXME: This is a poor way of getting this information, should be using a datasource or databinding instead.
                 Room SelectedGameRoom = lobby.GetRooms().Find(item => item.Name == (string)row.Cells[0].Value);
-
-                PlayerList.Items.Clear();
-
-                foreach (Player player in SelectedGameRoom.Players)
-                {
-                    PlayerList.Items.Add(player.Username);
-                }
+                FillPlayerList(SelectedGameRoom);
             }
         }
 
@@ -84,15 +78,36 @@ namespace ToriLobby
             String PlayerName = (string) PlayerList.Items[PlayerList.SelectedIndex];
 
             // If the selected playername is valid (which it probably is)
-            if (!String.IsNullOrEmpty(PlayerName)) {
-
+            if (!String.IsNullOrEmpty(PlayerName))
+            {
                 var PlayerStats = Player.getStats(PlayerName);
 
                 PlayerStatsForm PlayerStatsForm = new PlayerStatsForm(PlayerStats);
                 PlayerStatsForm.Show();
             }
+        }
+
+        
+        private void gameRoomList_SelectionChanged(object sender, EventArgs e)
+        {
+            string SelectedLobbyName = (string)gameRoomList.SelectedRows[0].Cells[0].Value;
+            Room SelectedGameRoom = lobby.GetRooms().Find(item => item.Name == SelectedLobbyName);
             
-            
+            // When you pick a room in the list, display that room's players
+            FillPlayerList(SelectedGameRoom);
+        }
+
+
+
+        // Fills the player list with the players in a room
+        private void FillPlayerList(Room SelectedGameRoom)
+        {
+            PlayerList.Items.Clear();
+
+            foreach (Player player in SelectedGameRoom.Players)
+            {
+                PlayerList.Items.Add(player.Username);
+            }
         }
     }
 

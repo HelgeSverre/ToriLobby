@@ -77,7 +77,7 @@
             this.gameRoomList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gameRoomList.Size = new System.Drawing.Size(1010, 488);
             this.gameRoomList.TabIndex = 0;
-            this.gameRoomList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gameRoomList_CellClick);
+            this.gameRoomList.SelectionChanged += new System.EventHandler(this.gameRoomList_SelectionChanged);
             // 
             // RoomName
             // 
