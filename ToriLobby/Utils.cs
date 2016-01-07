@@ -28,37 +28,37 @@ namespace ToriLobby
                     StringSplitOptions.RemoveEmptyEntries
                 ).Select(int.Parse).ToList();
                 rules.ReactionTime = Int32.Parse(RulesArray[2]);
-                // rules.? = Int32.Parse(tmp[3]);
-                // rules.? = Int32.Parse(tmp[4]);
+                // rules.unknown_1 = Int32.Parse(tmp[3]);
+                // rules.unknown_2 = Int32.Parse(tmp[4]);
                 rules.Flags = Int32.Parse(RulesArray[5]);
                 rules.EngageDistance = Int32.Parse(RulesArray[6]);
                 rules.Damage = Int32.Parse(RulesArray[7]);
                 rules.Sumo = Int32.Parse(RulesArray[8]);
                 rules.Mod = RulesArray[9];
-                // rules.? = Int32.Parse(tmp[10]);
+                // rules.unknown_3 = Int32.Parse(tmp[10]);
                 rules.DojoSize = Int32.Parse(RulesArray[11]);
                 rules.DismemberThreshold = Int32.Parse(RulesArray[12]);
                 rules.FractureThreshold = Int32.Parse(RulesArray[13]);
                 rules.EngageHeight = Int32.Parse(RulesArray[14]);
-                // rules.? = Int32.Parse(tmp[15]);
-                // rules.? = Int32.Parse(tmp[16]);
-                // rules.? = Int32.Parse(tmp[17]);
-                // rules.? = Int32.Parse(tmp[18]);                  
+                // rules.unknown_4 = Int32.Parse(tmp[15]);
+                // rules.unknown_5 = Int32.Parse(tmp[16]);
+                // rules.unknown_6 = Int32.Parse(tmp[17]);
+                // rules.unknown_7 = Int32.Parse(tmp[18]);                  
                 rules.EngageRotation = Int32.Parse(RulesArray[19]);
-                // rules.? = Int32.Parse(tmp[20]);;
+                // rules.unknown_8 = Int32.Parse(tmp[20]);;
                 rules.EngageSpace = Int32.Parse(RulesArray[21]);
                 rules.DQTimeOut = Int32.Parse(RulesArray[22]);
-                // rules.? = Int32.Parse(tmp[23]);;
+                // rules.unknown_9 = Int32.Parse(tmp[23]);;
                 rules.DojoType = Int32.Parse(RulesArray[24]);
 
-                // These have to be parsed using the American decimal seperator, can't rely on the user's computer one being correct.
+                // These have to be parsed using the American decimal seperator, can't rely on the user's computer localization being correct.
                 rules.GravityX = float.Parse(RulesArray[25], NumberStyles.Number, CultureInfo.CreateSpecificCulture("en-US"));
                 rules.GravityZ = float.Parse(RulesArray[26], NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US" ));
                 rules.GravityY = float.Parse(RulesArray[27], NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US" ));
 
 
                 rules.DQFlag = Int32.Parse(RulesArray[28]);
-                // rules.? = Int32.Parse(tmp[29]);
+                // rules.unknown_10 = Int32.Parse(tmp[29]);
                 rules.DrawWinner = (RulesArray[30] == "1"); // "convert" to bool
                 rules.PointThreshold = Int32.Parse(RulesArray[31]);
                 rules.MaxContacts = Int32.Parse(RulesArray[32]);
