@@ -86,10 +86,18 @@ namespace ToriLobby
 
                 // Convert tab delimited string of players to a list.
                 string tmpPlayers = LobbyInfo["CLIENTS"].Groups["players"].ToString();
-                List<string> Players = new List<string>(tmpPlayers.Split(
+                List<string> PlayerUsernames = new List<string>(tmpPlayers.Split(
                     new string[] { "\t" },
                     StringSplitOptions.RemoveEmptyEntries
                 ));
+
+                List<Player> Players = new List<Player>();
+
+                foreach(string playerUsername in PlayerUsernames)
+                {
+                    Player tmpPlayer = new Player(playerUsername);
+                    Players.Add(tmpPlayer);
+                }
 
                 Rules ParsedRules = Utils.ParseGameRules(LobbyInfo["TMP"].Groups["rules"].ToString());
 

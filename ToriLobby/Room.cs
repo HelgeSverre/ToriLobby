@@ -18,10 +18,10 @@ namespace ToriLobby
         public Rules GameRules { get; set; }
 
         // Array of player names in this room
-        public List<string> Players { get; set; }
+        public List<Player> Players { get; set; }
 
 
-        public Room(string name, string desc, List<string> players, string ip, int port, Rules rules)
+        public Room(string name, string desc, List<Player> players, string ip, int port, Rules rules)
         {
             Name = name;
             Description = desc;

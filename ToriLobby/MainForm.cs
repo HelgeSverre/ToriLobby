@@ -70,9 +70,9 @@ namespace ToriLobby
 
                 PlayerList.Items.Clear();
 
-                foreach (string player in SelectedGameRoom.Players)
+                foreach (Player player in SelectedGameRoom.Players)
                 {
-                    PlayerList.Items.Add(player);
+                    PlayerList.Items.Add(player.Username);
                 }
             }
         }
