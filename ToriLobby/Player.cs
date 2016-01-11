@@ -49,9 +49,12 @@ namespace ToriLobby
 
             tmpStats.Add("Username", PlayerStatObject.username.ToString());
             tmpStats.Add("Id", PlayerStatObject.userid.ToString());
-            tmpStats.Add("Join Date", PlayerStatObject.joindate.ToString());
+
+            // TODO: Convert to human readable date string
+            tmpStats.Add("Join Date", PlayerStatObject.joindate.ToString()); 
             tmpStats.Add("Last Activity", PlayerStatObject.lastactivity.ToString());
             tmpStats.Add("Last InGame", PlayerStatObject.lastingame.ToString());
+            
             tmpStats.Add("Posts", PlayerStatObject.posts.ToString());
             tmpStats.Add("Achievement Progress", PlayerStatObject.achiev_progress.ToString());
             tmpStats.Add("Belt", PlayerStatObject.belt.ToString());
