@@ -12,7 +12,7 @@ namespace ToriLobby
         string lobbyHost = "144.76.163.135";
         int lobbyPort = 22000;
 
-        Lobby lobby;
+        public Lobby lobby;
 
 
         public MainForm()
@@ -75,7 +75,7 @@ namespace ToriLobby
         {
 
             // Grab the selected player from the list
-            String PlayerName = (string) PlayerList.Items[PlayerList.SelectedIndex];
+            String PlayerName = (string)PlayerList.Items[PlayerList.SelectedIndex];
 
             // If the selected playername is valid (which it probably is)
             if (!String.IsNullOrEmpty(PlayerName))
@@ -87,12 +87,12 @@ namespace ToriLobby
             }
         }
 
-        
+
         private void gameRoomList_SelectionChanged(object sender, EventArgs e)
         {
             string SelectedLobbyName = (string)gameRoomList.SelectedRows[0].Cells[0].Value;
             Room SelectedGameRoom = lobby.GetRooms().Find(item => item.Name == SelectedLobbyName);
-            
+
             // When you pick a room in the list, display that room's players
             FillPlayerList(SelectedGameRoom);
         }
@@ -108,6 +108,13 @@ namespace ToriLobby
             {
                 PlayerList.Items.Add(player.Username);
             }
+        }
+
+        private void joinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            CreateRoomForm CreateRoom = new CreateRoomForm();
+            CreateRoom.Show();
         }
     }
 

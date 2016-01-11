@@ -44,6 +44,7 @@
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainFormMenuStrip = new System.Windows.Forms.MenuStrip();
             this.tableLayoutServerBrowser = new System.Windows.Forms.TableLayoutPanel();
+            this.joinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.gameRoomList)).BeginInit();
             this.LobbyStatusStrip.SuspendLayout();
             this.MainFormMenuStrip.SuspendLayout();
@@ -154,7 +155,8 @@
             // serversToolStripMenuItem
             // 
             this.serversToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.refreshToolStripMenuItem});
+            this.refreshToolStripMenuItem,
+            this.joinToolStripMenuItem});
             this.serversToolStripMenuItem.Name = "serversToolStripMenuItem";
             this.serversToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.serversToolStripMenuItem.Text = "Rooms";
@@ -162,7 +164,7 @@
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
@@ -192,6 +194,13 @@
             this.tableLayoutServerBrowser.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutServerBrowser.Size = new System.Drawing.Size(1233, 492);
             this.tableLayoutServerBrowser.TabIndex = 5;
+            // 
+            // joinToolStripMenuItem
+            // 
+            this.joinToolStripMenuItem.Name = "joinToolStripMenuItem";
+            this.joinToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.joinToolStripMenuItem.Text = "Create";
+            this.joinToolStripMenuItem.Click += new System.EventHandler(this.joinToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -235,6 +244,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Port;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlayerCount;
         private System.Windows.Forms.TableLayoutPanel tableLayoutServerBrowser;
+        private System.Windows.Forms.ToolStripMenuItem joinToolStripMenuItem;
     }
 }
 

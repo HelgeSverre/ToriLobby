@@ -6,13 +6,13 @@ using System.Text.RegularExpressions;
 
 namespace ToriLobby
 {
-    class Lobby
+    public class Lobby
     {
         // List of rooms in this lobby
         private List<Room> Rooms = new List<Room>();
 
-        private string Hostname;
-        private int Port;
+        public string Hostname;
+        public int Port;
 
         private int totalPlayers;
 
