@@ -52,7 +52,8 @@ namespace ToriLobby
                 rules.DojoType = Int32.Parse(RulesArray[24]);
 
                 // These have to be parsed using the American decimal seperator, can't rely on the user's computer localization being correct.
-                rules.GravityX = float.Parse(RulesArray[25], NumberStyles.Number, CultureInfo.CreateSpecificCulture("en-US"));
+                rules.GravityX = float.Parse(RulesArray[25], NumberStyles.Number, 
+                CultureInfo.CreateSpecificCulture("en-US"));
                 rules.GravityZ = float.Parse(RulesArray[26], NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US" ));
                 rules.GravityY = float.Parse(RulesArray[27], NumberStyles.Number, CultureInfo.CreateSpecificCulture ("en-US" ));
 
