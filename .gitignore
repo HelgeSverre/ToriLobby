@@ -232,3 +232,7 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+
+# Pcap files include my password hash
+PCap
