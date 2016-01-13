@@ -47,7 +47,7 @@ namespace ToriLobby
         }
 
 
-        /*
+        
         // Gets host info from lobby object
         public Bot(string username, string password, Lobby lobby)
         {
@@ -64,7 +64,7 @@ namespace ToriLobby
             // Check if the credentials are valid
             if (ValidateCredientials(Username, Password))
             {
-
+                throw new NotImplementedException();
             }
             else
             {
@@ -72,7 +72,7 @@ namespace ToriLobby
             }
 
         }
-        */
+       
 
         public bool Join(string RoomName)
         {
