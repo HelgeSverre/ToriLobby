@@ -16,7 +16,7 @@ namespace ToriLobby
 
         private int totalPlayers;
 
-        public Lobby (string host, int port)
+        public Lobby(string host, int port)
         {
             Hostname = host;
             Port = port;
@@ -73,7 +73,7 @@ namespace ToriLobby
             {
                 // Regex the shit out of it.
                 Dictionary<string, Match> LobbyInfo = new Dictionary<string, Match>();
-            
+
                 // Add Regex Matches to LobbyInfo dictionary
 
                 // TODO: The INFO values are unknown, needs to be reverse engineered.
@@ -93,7 +93,7 @@ namespace ToriLobby
 
                 List<Player> Players = new List<Player>();
 
-                foreach(string playerUsername in PlayerUsernames)
+                foreach (string playerUsername in PlayerUsernames)
                 {
                     Player tmpPlayer = new Player(playerUsername);
                     Players.Add(tmpPlayer);

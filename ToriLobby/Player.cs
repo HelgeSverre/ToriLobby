@@ -33,19 +33,28 @@ namespace ToriLobby
             // Remove the clan name from the username
             Username = Regex.Replace(user, "\\[.*\\]|\\(.*\\)", "");
         }
-        
 
+        // TODO: Create properties and use them instead of using this, or populate propeties with this method
         public static Dictionary<string, string> getStats(string user)
         {
+            // Connect to the player stat webservice
             WebRequest request = WebRequest.Create(String.Format(PlayerStatUrl, user));
             request.ContentType = "application/json; charset=utf-8";
+
+            // Get the response stream and read all the text returned
             WebResponse response = request.GetResponse();
             var sr = new StreamReader(response.GetResponseStream());
             var text = sr.ReadToEnd();
 
+            // Parse the JSON stats into an object
             dynamic PlayerStatObject = JsonConvert.DeserializeObject(text);
 
+            // Create tmp dictionary for statistics
+            // NAUGHTY NAUGHTY STRINGS, BAD HELGE BAAAAAAAD!!!!
             Dictionary<string, string> tmpStats = new Dictionary<string, string>();
+
+
+            // Add all the stats from the PlayerAStatObject to the tmpstat
 
             tmpStats.Add("Username", PlayerStatObject.username.ToString());
             tmpStats.Add("Id", PlayerStatObject.userid.ToString());
@@ -74,10 +83,13 @@ namespace ToriLobby
             // Not needed atm
             // tmpStats.Add("Room", PlayerStatObject.room);
 
+
+            // Return the stats
             return tmpStats;
         }
 
 
+        // TODO: Remove, never used
         internal static dynamic getPlayerStats(string username)
         {
 
