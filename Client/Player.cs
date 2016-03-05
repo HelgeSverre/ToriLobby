@@ -1,12 +1,11 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using System.Windows.Forms;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json;
 
-namespace ToriLobby
+namespace Client
 {
     public class Player
     {

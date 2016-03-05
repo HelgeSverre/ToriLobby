@@ -1,0 +1,42 @@
+
+Actions:
+
+    Create room
+    join room
+    get rooms / refresh rooms
+
+        whisper
+        get user list in room
+        kick player
+        ban player
+        set password
+
+    logs
+        log win/loss/tie
+        log moves
+        log chat
+
+
+    autorefresh rooms
+    show game rules
+    show player stats
+
+
+    add watcher
+        clan
+        user
+
+
+    Host private server(hahaha gonna be awhile)
+
+
+    settings
+    add bot account
+        username
+        password
+
+    proxy settings??
+
+    help
+    about
+    plugins

@@ -13,3 +13,10 @@ You can also change the "per_page" param, max is 250
 
 A list of colors, their name, id and RGB value can be found here
 http://www.toribash.com/colors.txt
+
+
+# Toribash Store data
+
+http://forum.toribash.com:8080/ingame_store.php
+Tab seperated, newline delimited list of store items
+

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
-
+using Client;
 
 namespace ToriLobby
 {
@@ -112,9 +112,7 @@ namespace ToriLobby
 
         private void joinToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            CreateRoomForm CreateRoom = new CreateRoomForm();
-            CreateRoom.Show();
+            MessageBox.Show("Test", "Hai");
         }
     }
 

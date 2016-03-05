@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net.Sockets;
 using System.IO;
+using System.Net.Sockets;
 using System.Text.RegularExpressions;
 
-namespace ToriLobby
+namespace Client
 {
     public class Lobby
     {

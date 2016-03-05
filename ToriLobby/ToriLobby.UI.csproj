@@ -68,29 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bot.cs" />
-    <Compile Include="BotForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BotForm.Designer.cs">
-      <DependentUpon>BotForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CreateRoomForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateRoomForm.Designer.cs">
-      <DependentUpon>CreateRoomForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Player.cs" />
     <Compile Include="PlayerStatsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PlayerStatsForm.Designer.cs">
       <DependentUpon>PlayerStatsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Room.cs" />
-    <Compile Include="Rules.cs" />
-    <Compile Include="Lobby.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,13 +82,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils.cs" />
-    <EmbeddedResource Include="BotForm.resx">
-      <DependentUpon>BotForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CreateRoomForm.resx">
-      <DependentUpon>CreateRoomForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +125,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Client\Torilobby.Client.csproj">
+      <Project>{206ed423-3783-4e12-b255-1b808a4d29f5}</Project>
+      <Name>Torilobby.Client</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ToriLobby
+namespace Client
 {
     public struct Room
     {
