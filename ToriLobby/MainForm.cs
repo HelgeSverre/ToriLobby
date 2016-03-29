@@ -121,7 +121,7 @@ namespace ToriLobby
             string selectedLobbyName = (string)gameRoomList.SelectedRows[0].Cells[0].Value;
             Room selectedGameRoom = lobby.GetRooms().Find(item => item.Name == selectedLobbyName);
 
-            var test = new Client.Client("torilobby", "Toribash123");
+            var test = new Client.Client("", "");
 
             test.Join(selectedGameRoom);
 
