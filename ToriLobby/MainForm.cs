@@ -52,7 +52,7 @@ namespace ToriLobby
                 gameRoomList.Rows.Add(row);
             }
 
-            int totalPlayers = lobby.getTotalPlayers();
+            int totalPlayers = lobby.GetTotalPlayers();
 
             // TODO: See if there is a better way to inject this counter thingy into the string without having to remember the "Players: " part
             toolStripTotalPlayers.Text = "Players: " + totalPlayers.ToString();
@@ -65,9 +65,9 @@ namespace ToriLobby
             {
                 DataGridViewRow row = gameRoomList.Rows[e.RowIndex];
 
-                // FIXME: This is a poor way of getting this information, should be using a datasource or databinding instead.
-                Room SelectedGameRoom = lobby.GetRooms().Find(item => item.Name == (string)row.Cells[0].Value);
-                FillPlayerList(SelectedGameRoom);
+                // TODO: This is a poor way of getting this information, should be using a datasource or databinding instead.
+                Room selectedGameRoom = lobby.GetRooms().Find(item => item.Name == (string)row.Cells[0].Value);
+                FillPlayerList(selectedGameRoom);
             }
         }
 
@@ -75,36 +75,36 @@ namespace ToriLobby
         {
 
             // Grab the selected player from the list
-            String PlayerName = (string)PlayerList.Items[PlayerList.SelectedIndex];
+            String playerName = (string)PlayerList.Items[PlayerList.SelectedIndex];
 
             // If the selected playername is valid (which it probably is)
-            if (!String.IsNullOrEmpty(PlayerName))
+            if (!String.IsNullOrEmpty(playerName))
             {
-                var PlayerStats = Player.getStats(PlayerName);
+                var playerStats = Player.getStats(playerName);
 
-                PlayerStatsForm PlayerStatsForm = new PlayerStatsForm(PlayerStats);
-                PlayerStatsForm.Show();
+                PlayerStatsForm playerStatsForm = new PlayerStatsForm(playerStats);
+                playerStatsForm.Show();
             }
         }
 
 
         private void gameRoomList_SelectionChanged(object sender, EventArgs e)
         {
-            string SelectedLobbyName = (string)gameRoomList.SelectedRows[0].Cells[0].Value;
-            Room SelectedGameRoom = lobby.GetRooms().Find(item => item.Name == SelectedLobbyName);
+            string selectedLobbyName = (string)gameRoomList.SelectedRows[0].Cells[0].Value;
+            Room selectedGameRoom = lobby.GetRooms().Find(item => item.Name == selectedLobbyName);
 
             // When you pick a room in the list, display that room's players
-            FillPlayerList(SelectedGameRoom);
+            FillPlayerList(selectedGameRoom);
         }
 
 
 
         // Fills the player list with the players in a room
-        private void FillPlayerList(Room SelectedGameRoom)
+        private void FillPlayerList(Room selectedGameRoom)
         {
             PlayerList.Items.Clear();
 
-            foreach (Player player in SelectedGameRoom.Players)
+            foreach (Player player in selectedGameRoom.Players)
             {
                 PlayerList.Items.Add(player.Username);
             }
@@ -113,6 +113,19 @@ namespace ToriLobby
         private void joinToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Test", "Hai");
+        }
+
+        private void joinSelectedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            string selectedLobbyName = (string)gameRoomList.SelectedRows[0].Cells[0].Value;
+            Room selectedGameRoom = lobby.GetRooms().Find(item => item.Name == selectedLobbyName);
+
+            var test = new Client.Client("torilobby", "Toribash123");
+
+            test.Join(selectedGameRoom);
+
+
         }
     }
 

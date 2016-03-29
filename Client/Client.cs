@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Net.Sockets;
+using System.Threading;
 using System.Timers;
+using Timer = System.Timers.Timer;
 
 namespace Client
 {
-    class Client
+    public class Client
     {
-
-        private bool connected;
         private TcpClient _socket;
 
         private StreamReader _reader;
@@ -19,6 +22,8 @@ namespace Client
         private readonly string _username;
         private readonly string _password;
 
+        public Timer PingTimer = new Timer(30000);
+
 
 
         public Client(string username, string password)
@@ -27,50 +32,70 @@ namespace Client
             _username = username;
             _password = Utils.HashPassword(password);
 
+
+            // TODO: Move to login function
             // Check if the credentials are valid
             if (!Utils.ValidateCredentials(_username, _password))
             {
                 throw new ArgumentException("Invalid username or password");
             }
+
+            PingTimer.Elapsed += PingTimerOnElapsed;
         }
 
         public void Join(Room room)
         {
             _currentRoom = room;
 
+            Console.WriteLine($"Connecting to {room.IPAddress}:{room.Port}");
+
             // Create a new TcpSocketClient
             _socket = new TcpClient(room.IPAddress, room.Port);
             _reader = new StreamReader(_socket.GetStream());
-            _writer = new StreamWriter(_socket.GetStream());
+            _writer = new StreamWriter(_socket.GetStream())
+            {
+                AutoFlush = true
+            };
 
-            // Authenticate to room
-            _writer.Write($"mlogin {_username} {_password}");
+            Login();
+            ReadLoop();
 
-            // if we connected
-            connected = true;
+        }
 
-
-            // Setup a pinger, if we dont ping the server regularly, we get kicked out.
-            Timer pingTimer = new Timer(10000);
-            pingTimer.Elapsed += (o, args) => _writer.Write("PING");
+        private void Login()
+        {
+            _writer.WriteLine($"mlogin {_username} {_password}");
+            PingTimer.Start();
         }
 
 
-        private void Loop()
+
+        private async void ReadLoop()
         {
-            string data = "";
-
-            while (connected)
+            while (_socket.Connected)
             {
-
-                if (_socket.Available > 0)
+                // Asyncronously read line
+                var line = await _reader.ReadLineAsync();
+                if (line != null) // If the line is null that means the connection has ended.
                 {
-                    data = _reader.ReadLine();
+                    // Convert the line to a BashCommand and then process it
+                    Console.WriteLine(line);
                 }
-
-                Console.WriteLine(data);
-
+                else
+                {
+                    // If we disconnect, try to reconnect!
+                    Console.WriteLine("Disconnected, Reconnecting..");
+                    _socket = new TcpClient();
+                    Login();
+                }
             }
+        }
+
+
+        private void PingTimerOnElapsed(object sender, ElapsedEventArgs e)
+        {
+            Console.WriteLine("ping");
+            _writer.Write("PING");
         }
     }
 }

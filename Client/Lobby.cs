@@ -34,15 +34,15 @@ namespace Client
             TcpClient client = new TcpClient(Hostname, Port);
             StreamReader sReader = new StreamReader(client.GetStream());
 
-            string LobbyResponse = sReader.ReadToEnd();
+            string lobbyResponse = sReader.ReadToEnd();
 
-            var ParsedRoomList = ParseRooms(LobbyResponse);
+            List<Room> parsedRoomList = ParseRooms(lobbyResponse);
 
             // Clear the rooms
             Rooms.Clear();
 
             // Replace with new list of rooms
-            Rooms = ParsedRoomList;
+            Rooms = parsedRoomList;
 
             totalPlayers = 0;
 
@@ -52,7 +52,7 @@ namespace Client
             }
         }
 
-        public int getTotalPlayers()
+        public int GetTotalPlayers()
         {
             return totalPlayers;
         }
