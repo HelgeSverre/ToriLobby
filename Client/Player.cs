@@ -5,7 +5,7 @@ using System.Net;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 
-namespace Client
+namespace Torilobby
 {
     public class Player
     {

@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Sockets;
 using System.Text.RegularExpressions;
+using Toribash.Bot;
 
-namespace Client
+namespace Torilobby
 {
     public class Lobby
     {
         // List of rooms in this lobby
-        private List<Room> Rooms = new List<Room>();
+        private List<Room> _rooms = new List<Room>();
 
         public string Hostname;
         public int Port;
 
-        private int totalPlayers;
+        private int _totalPlayers;
 
         public Lobby(string host, int port)
         {
@@ -26,45 +27,45 @@ namespace Client
 
         public List<Room> GetRooms()
         {
-            return Rooms;
+            return _rooms;
         }
 
         public void Update()
         {
             TcpClient client = new TcpClient(Hostname, Port);
-            StreamReader sReader = new StreamReader(client.GetStream());
+            StreamReader reader = new StreamReader(client.GetStream());
 
-            string lobbyResponse = sReader.ReadToEnd();
+            string lobbyResponse = reader.ReadToEnd();
 
             List<Room> parsedRoomList = ParseRooms(lobbyResponse);
 
             // Clear the rooms
-            Rooms.Clear();
+            _rooms.Clear();
 
             // Replace with new list of rooms
-            Rooms = parsedRoomList;
+            _rooms = parsedRoomList;
 
-            totalPlayers = 0;
+            _totalPlayers = 0;
 
-            foreach (Room room in Rooms)
+            foreach (Room room in _rooms)
             {
-                totalPlayers += room.Players.Count;
+                _totalPlayers += room.Players.Count;
             }
         }
 
         public int GetTotalPlayers()
         {
-            return totalPlayers;
+            return _totalPlayers;
         }
 
 
-        private List<Room> ParseRooms(string LobbyResponse)
+        private List<Room> ParseRooms(string lobbyResponse)
         {
 
             List<Room> tmpRooms = new List<Room>();
 
             // Each gameroom data structure is prefixed by "TORIBASH 30\n"
-            string[] tmpGameRooms = LobbyResponse.Split(
+            string[] tmpGameRooms = lobbyResponse.Split(
                 new string[] { "TORIBASH 30\n" },
                 StringSplitOptions.RemoveEmptyEntries
             );
@@ -99,7 +100,7 @@ namespace Client
                     Players.Add(tmpPlayer);
                 }
 
-                Rules ParsedRules = Utils.ParseGameRules(LobbyInfo["TMP"].Groups["rules"].ToString());
+                Rules ParsedRules = RulesParser.Parse(LobbyInfo["TMP"].Groups["rules"].ToString());
 
                 // Add the new gameroom with the parsed information
                 tmpRooms.Add(new Room(

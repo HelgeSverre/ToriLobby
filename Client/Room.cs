@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Torilobby;
 
-namespace Client
+namespace Toribash.Bot
 {
     public struct Room
     {

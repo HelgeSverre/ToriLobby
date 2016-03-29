@@ -43,11 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
+    <Compile Include="Bout.cs" />
+    <Compile Include="Parsers\BoutParser.cs" />
+    <Compile Include="Bot.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="Parsers\CommandParser.cs" />
     <Compile Include="Lobby.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs" />
+    <Compile Include="Parsers\RulesParser.cs" />
     <Compile Include="Rules.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>

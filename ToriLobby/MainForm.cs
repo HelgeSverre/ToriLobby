@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
-using Client;
+using Toribash.Bot;
+using Torilobby;
 
 namespace ToriLobby
 {
@@ -90,11 +91,14 @@ namespace ToriLobby
 
         private void gameRoomList_SelectionChanged(object sender, EventArgs e)
         {
-            string selectedLobbyName = (string)gameRoomList.SelectedRows[0].Cells[0].Value;
-            Room selectedGameRoom = lobby.GetRooms().Find(item => item.Name == selectedLobbyName);
+            if (gameRoomList.SelectedRows.Count > 0)
+            {
+                string selectedLobbyName = (string)gameRoomList.SelectedRows[0].Cells[0].Value;
+                Room selectedGameRoom = lobby.GetRooms().Find(item => item.Name == selectedLobbyName);
 
-            // When you pick a room in the list, display that room's players
-            FillPlayerList(selectedGameRoom);
+                // When you pick a room in the list, display that room's players
+                FillPlayerList(selectedGameRoom);
+            }
         }
 
 
@@ -117,15 +121,16 @@ namespace ToriLobby
 
         private void joinSelectedToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (gameRoomList.SelectedRows.Count > 0)
+            {
 
-            string selectedLobbyName = (string)gameRoomList.SelectedRows[0].Cells[0].Value;
-            Room selectedGameRoom = lobby.GetRooms().Find(item => item.Name == selectedLobbyName);
-
-            var test = new Client.Client("", "");
-
-            test.Join(selectedGameRoom);
+                string selectedLobbyName = (string)gameRoomList.SelectedRows[0].Cells[0].Value;
+                Room selectedGameRoom = lobby.GetRooms().Find(item => item.Name == selectedLobbyName);
 
 
+                ChatForm chat = new ChatForm(selectedGameRoom);
+                chat.Show();
+            }
         }
     }
 

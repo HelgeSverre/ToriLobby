@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToriLobby.UI", "ToriLobby\ToriLobby.UI.csproj", "{59FDEA30-7A3E-4E0A-B93E-72CE82841BD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Torilobby.Client", "Client\Torilobby.Client.csproj", "{206ED423-3783-4E12-B255-1B808A4D29F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Torilobby.Bot", "Client\Torilobby.Bot.csproj", "{206ED423-3783-4E12-B255-1B808A4D29F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
