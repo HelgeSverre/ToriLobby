@@ -1,10 +1,23 @@
 using System;
 
-namespace Torilobby
+namespace Torilobby.Client
 {
+
+    public enum CommandType
+    {
+        Say,
+        Disconnect,
+        Spectate,
+        Ping,
+        Kick,
+        Whisper,
+        Ban,
+        None
+    }
+
     public class Command
     {
-
+        // TODO: Move this elsewhere, possibly to enum
         public static string Chat = "SAY";
         public static string Bout = "BOUT";
         public static string Disconnect = "DISCONNECT";
@@ -18,6 +31,7 @@ namespace Torilobby
         public string Info;
         public string Value;
 
+        // TODO: Implement Strategy pattern
         public Command(string name, string info, string value)
         {
             Name = name;

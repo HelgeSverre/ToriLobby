@@ -7,8 +7,8 @@
     <ProjectGuid>{59FDEA30-7A3E-4E0A-B93E-72CE82841BD5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ToriLobby</RootNamespace>
-    <AssemblyName>ToriLobby</AssemblyName>
+    <RootNamespace>ToriLobby.UI</RootNamespace>
+    <AssemblyName>ToriLobby.UI</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -105,6 +105,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -136,9 +137,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Client\Torilobby.Bot.csproj">
+    <ProjectReference Include="..\Torilobby.Client\Torilobby.Client.csproj">
       <Project>{206ed423-3783-4e12-b255-1b808a4d29f5}</Project>
-      <Name>Torilobby.Bot</Name>
+      <Name>Torilobby.Client</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

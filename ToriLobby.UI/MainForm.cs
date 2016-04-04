@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
-using Toribash.Bot;
-using Torilobby;
+using Torilobby.Client;
 
 namespace ToriLobby
 {
@@ -34,7 +33,7 @@ namespace ToriLobby
         {
             gameRoomList.Rows.Clear();
 
-            List<Room> tmpRooms = lobby.GetRooms();
+            List<Room> tmpRooms = lobby.Rooms;
 
             foreach (Room room in tmpRooms)
             {
@@ -53,7 +52,7 @@ namespace ToriLobby
                 gameRoomList.Rows.Add(row);
             }
 
-            int totalPlayers = lobby.GetTotalPlayers();
+            int totalPlayers = lobby.Players;
 
             // TODO: See if there is a better way to inject this counter thingy into the string without having to remember the "Players: " part
             toolStripTotalPlayers.Text = "Players: " + totalPlayers.ToString();
@@ -67,7 +66,7 @@ namespace ToriLobby
                 DataGridViewRow row = gameRoomList.Rows[e.RowIndex];
 
                 // TODO: This is a poor way of getting this information, should be using a datasource or databinding instead.
-                Room selectedGameRoom = lobby.GetRooms().Find(item => item.Name == (string)row.Cells[0].Value);
+                Room selectedGameRoom = lobby.Rooms.Find(item => item.Name == (string)row.Cells[0].Value);
                 FillPlayerList(selectedGameRoom);
             }
         }
@@ -94,7 +93,7 @@ namespace ToriLobby
             if (gameRoomList.SelectedRows.Count > 0)
             {
                 string selectedLobbyName = (string)gameRoomList.SelectedRows[0].Cells[0].Value;
-                Room selectedGameRoom = lobby.GetRooms().Find(item => item.Name == selectedLobbyName);
+                Room selectedGameRoom = lobby.Rooms.Find(item => item.Name == selectedLobbyName);
 
                 // When you pick a room in the list, display that room's players
                 FillPlayerList(selectedGameRoom);
@@ -125,7 +124,7 @@ namespace ToriLobby
             {
 
                 string selectedLobbyName = (string)gameRoomList.SelectedRows[0].Cells[0].Value;
-                Room selectedGameRoom = lobby.GetRooms().Find(item => item.Name == selectedLobbyName);
+                Room selectedGameRoom = lobby.Rooms.Find(item => item.Name == selectedLobbyName);
 
 
                 ChatForm chat = new ChatForm(selectedGameRoom);

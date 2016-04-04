@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Torilobby
+namespace Torilobby.Client
 {
     class Utils
     {

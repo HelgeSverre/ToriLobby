@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using Toribash.Bot;
-using Torilobby;
+using Torilobby.Client;
+using ToriLobby.Client;
 
 namespace ToriLobby
 {
@@ -13,8 +13,11 @@ namespace ToriLobby
         {
             InitializeComponent();
 
-            bot = new Bot("", "");
-            bot.ChatRecieved += OnMessageReceived;
+
+            Credentials creds = new Credentials("", "");
+
+            bot = new Bot(creds);
+            // bot.ChatRecieved += OnMessageReceived;
             bot.Join(room);
         }
 
@@ -25,7 +28,7 @@ namespace ToriLobby
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            bot.Send("SAY " + txtMessage.Text);
+            // bot.Send("SAY " + txtMessage.Text);
         }
     }
 }

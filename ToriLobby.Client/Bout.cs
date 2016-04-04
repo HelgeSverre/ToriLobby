@@ -1,7 +1,9 @@
 ﻿using System;
 
-namespace Torilobby
+namespace Torilobby.Client
 {
+
+    // TODO: Refactor and research BOUT lines
     public class Bout
     {
         public int ID;

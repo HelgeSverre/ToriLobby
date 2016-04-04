@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
-using Toribash.Bot;
 
-namespace Torilobby
+namespace Torilobby.Client.Parsers
 {
     class RulesParser
     {

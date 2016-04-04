@@ -5,11 +5,29 @@ using System.Net;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 
-namespace Torilobby
+namespace Torilobby.Client
 {
+
+    public enum PlayerGroupMembership
+    {
+        Administrator,
+        SuperModerator,
+        EventSquad,
+        MarketSquad
+    }
+
     public class Player
     {
-        
+
+        /*
+        Admins and SMods have an ~
+        Event Squad have colored names and an *
+        Market Squad have a $
+        */
+        // TODO: Add Handling for this
+        public List<PlayerGroupMembership> GroupMemberships;
+
+
         public string Username { get; }
         /*
         public int Id { get; }
@@ -89,7 +107,7 @@ namespace Torilobby
 
 
         // TODO: Remove, never used
-        internal static dynamic getPlayerStats(string username)
+        internal static dynamic GetPlayerStats(string username)
         {
 
             WebRequest request = WebRequest.Create(String.Format(PlayerStatUrl, username));

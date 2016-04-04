@@ -1,7 +1,7 @@
-namespace Torilobby
-{
+using Torilobby.Client;
 
-   
+namespace Torilobby.Client.Parsers
+{
     // TODO: Implement missing values
     public static class BoutParser
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Toribash.Bot
+namespace Torilobby.Client
 {
     public struct Rules
     {
